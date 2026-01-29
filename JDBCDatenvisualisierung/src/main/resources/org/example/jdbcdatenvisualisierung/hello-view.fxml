@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="TOP_CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.example.jdbcdatenvisualisierung.HelloController"
-      prefWidth="1100.0" prefHeight="750.0">
+      prefWidth="1200.0" prefHeight="800.0"
+      minWidth="900.0" minHeight="650.0">
+
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText" text="Sprachvielfalt pro Land (Top 30)"/>
+    <Label fx:id="welcomeText" text="Sprachvielfalt pro Land"/>
 
-    <!-- Neu: Kontinent-Auswahl -->
-    <ComboBox fx:id="continentComboBox" prefWidth="300.0" promptText="Kontinent auswählen"/>
+    <!-- Filterleiste -->
+    <HBox spacing="12" alignment="CENTER">
+        <ComboBox fx:id="continentComboBox" prefWidth="260.0" promptText="Kontinent auswählen"/>
+        <Label text="Top:"/>
+        <Spinner fx:id="topNSpinner" prefWidth="90.0"/>
+    </HBox>
 
     <BarChart fx:id="languageBarChart" VBox.vgrow="ALWAYS">
         <xAxis>

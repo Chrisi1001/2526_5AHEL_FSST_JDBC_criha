@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -15,6 +16,9 @@
     </padding>
 
     <Label fx:id="welcomeText" text="Sprachvielfalt pro Land (Top 30)"/>
+
+    <!-- Neu: Kontinent-Auswahl -->
+    <ComboBox fx:id="continentComboBox" prefWidth="300.0" promptText="Kontinent auswählen"/>
 
     <BarChart fx:id="languageBarChart" VBox.vgrow="ALWAYS">
         <xAxis>

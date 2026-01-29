@@ -36,7 +36,6 @@ public class HelloController {
     }
 
     public void initialize() {
-        // Chart Optik (wie bei dir)
         languageBarChart.setLegendVisible(false);
         CategoryAxis xAxis = (CategoryAxis) languageBarChart.getXAxis();
         NumberAxis yAxis = (NumberAxis) languageBarChart.getYAxis();
@@ -58,6 +57,10 @@ public class HelloController {
             loadChartForContinent(selected);
         }
     }
+    // Für Combobox:
+    // https://jenkov.com/tutorials/javafx/combobox.html?utm_source=chatgpt.com
+    // Resultierendes Ergebnis auslesen:
+    // https://docs.oracle.com/javase/tutorial/jdbc/basics/retrieving.html
 
     private void loadContinents() {
         String sql = "SELECT DISTINCT continent FROM country ORDER BY continent;";
@@ -79,6 +82,8 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
+    // https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html
 
     private void loadChartForContinent(String continent) {
         List<CountryLanguageCount> data = new ArrayList<>();
@@ -109,6 +114,8 @@ public class HelloController {
             e.printStackTrace();
             return;
         }
+        // BarChart:
+        // https://docs.oracle.com/javase/8/javafx/api/javafx/scene/chart/BarChart.html
 
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         for (CountryLanguageCount item : data) {
